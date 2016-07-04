@@ -2,8 +2,8 @@
 
 ## .NET Core 
 - new project and debug 
-- dotnet publish
-- reference in other project source
+- [dotnet publish](/dotnetcore/publishing)
+- [reference in other project source](/dotnetcore/projects)
 - create nuget and publish to private repository
 - [native interop](/dotnetcore/native)
 - Unit Test
