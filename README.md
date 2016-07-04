@@ -4,7 +4,7 @@
 - new project and debug 
 - [dotnet publish](/dotnetcore/publishing)
 - [reference in other project source](/dotnetcore/projects)
-- create nuget and publish to private repository
+- [create nuget and publish to private repository](/dotnetcore/nuget)
 - [native interop](/dotnetcore/native)
 - Unit Test
 - service and cron
