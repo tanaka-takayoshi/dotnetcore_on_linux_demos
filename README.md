@@ -5,6 +5,7 @@
 - dotnet publish
 - reference in other project source
 - create nuget and publish to private repository
+- [native interop](/dotnetcore/native)
 - Unit Test
 - service and cron
 - debug project on Linux from Windows
