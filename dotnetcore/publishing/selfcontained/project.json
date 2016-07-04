@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "debugType": "portable",
+    "emitEntryPoint": true
+  },
+  "dependencies": {
+    "NETStandard.Library": "1.6.0",
+    "Microsoft.NETCore.Runtime.CoreCLR": "1.0.2",
+    "Microsoft.NETCore.DotNetHostPolicy":  "1.0.1",
+    "Newtonsoft.Json": "9.0.1"
+  },
+  "frameworks": {
+    "netcoreapp1.0": { }
+  },
+  "runtimes":{
+    "win10-x64": {},
+    "rhel.7.2-x64": {}
+  }
+}
