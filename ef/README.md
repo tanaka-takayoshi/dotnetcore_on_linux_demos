@@ -19,3 +19,13 @@ $ dotnet build
 $ dotnet ef migrations add SecondMigration
 $ dotnet ef database update
 ```
+
+## ASP.NET Core with postgresql
+
+```
+$ yo aspnet
+```
+
+```
+# yum install 
+```
