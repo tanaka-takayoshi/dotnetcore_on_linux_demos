@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SignalR</title>
+    
+</head>
+<body>
+    <h1>Hello! RHTE2016 APAC</h1>
+    <div id="count"></div>
+    <p><button type="button" id="goodbutton">GOOD!</button></p>
+    <script src="/Scripts/jquery-1.8.2.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.0.3.js"></script>
+    <script src="/signalr/js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var message = $.connection.message;
+            var counter = $('#count');
+            
+            $.connection.hub.start(/*{ transport: activeTransport },*/ function () {
+                message.server.getCurrent(function(value) {
+                    counter.text(value);
+                });
+
+                $('#goodbutton').click(function () {
+                    message.server.send().done(function (values) {
+                        //$('#count').text(values);
+                    });
+                });
+            });
+            
+            message.client.broadcast = function (value) {
+                counter.text(value);
+            }; 
+
+        });
+    </script>
+</body>
+</html>

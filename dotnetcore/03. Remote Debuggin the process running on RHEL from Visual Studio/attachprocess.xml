@@ -1,0 +1,8 @@
+<PipeLaunchOptions xmlns="http://schemas.microsoft.com/vstudio/MDDDebuggerOptions/2014"
+  PipePath="c:\mytools\plink.exe" PipeArguments="-i <path_to_ssh_key> <user>@<target_linux_machine_host> -batch -t ~/clrdbg/clrdbg --interpreter=mi"
+  TargetArchitecture="x64" MIMode="clrdbg">
+  <CustomLaunchSetupCommands>
+    <Command>-target-attach {process_id}/Command>
+  </CustomLaunchSetupCommands>
+ <LaunchCompleteCommand>None</LaunchCompleteCommand>
+</PipeLaunchOptions>
