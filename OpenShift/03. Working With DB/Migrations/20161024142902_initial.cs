@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HelloReact.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,8 @@ namespace HelloReact.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Autoincrement", true),
+                        .Annotation("Autoincrement", true)
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     Complete = table.Column<bool>(nullable: false),
                     Description = table.Column<string>(maxLength: 512, nullable: false)
                 },
