@@ -4,15 +4,15 @@ OpenShift provides [secrets](https://docs.openshift.com/enterprise/3.2/dev_guide
 # Steps
 1. Create secret with json file.
  ```
- $ vim secret.json
- {
-     "SecretKey": "SecretValue",
-     "SecretDict": {
-         "SecretDictKey1": "SecretDictValue1",
-         "SecretDictKey2": "SecretDictValue2"
-     }
- }
- $ oc secret new secret.json secret.json
+ $ vim mysecret.yaml
+ apiVersion: "v1"
+ kind: "Secret"
+ metadata:
+   name: "mysecret"
+ stringData: 
+   mysecretkey: "ValueOfMySecret"
+
+ $ oc create -f mysecret.yaml
  ```
  
 2. Deploy this repository to OpenShift.
@@ -23,10 +23,10 @@ OpenShift provides [secrets](https://docs.openshift.com/enterprise/3.2/dev_guide
  ```
  
  ```
- $ oc new-app --template=aspnet-s2i -p GIT_URI=https://github.com/tanaka-takayoshi/rhte2016-apac-demo-dotnetcore -p  GIT_CONTEXT_DIR="04. Working with OpenShift Secrets" -p APPLICATION_NAME=<Your_Favorite_Name>
+ $  oc new-app --template=aspnet-s2i  -p GIT_URI=https://github.com/tanaka-takayoshi/rhte2016-apac-demo-dotnetcore -p  GIT_CONTEXT_DIR="OpenShift/04. Working with OpenShift Secrets" -p APPLICATION_NAME=<APP_NAME> -l app=<APP_NAME>
  ```
 
 3. Edit deploymentconfig to add secret.
  ```
- $ oc volumes dc/secret-sample --add --type=secret --secret-name=secret.json --mount-path=/config
+ $ oc volumes dc/<APP_NAME> --add --type=secret --secret-name=mysecret --mount-path=/etc/secret-volume
  ```
