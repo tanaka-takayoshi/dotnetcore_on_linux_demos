@@ -23,14 +23,13 @@ namespace RHTE2016Demo.Web
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
-            if (Directory.Exists("/config"))
-                builder.AddJsonFile("/config/secret.json", true);
+            if (Directory.Exists("/etc/secret-volume"))
+                builder.AddJsonFile("/etc/secret-volume/mysecret", true);
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
 
-            Console.WriteLine(Configuration["SecretKey"]);
-            Console.WriteLine(Configuration["SecretDict"]);
+            Console.WriteLine(Configuration["mysecretkey"]);
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
