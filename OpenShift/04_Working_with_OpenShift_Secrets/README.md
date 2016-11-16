@@ -23,7 +23,7 @@ OpenShift provides [secrets](https://docs.openshift.com/enterprise/3.2/dev_guide
  ```
  
  ```
- $  oc new-app --template=aspnet-s2i  -p GIT_URI=https://github.com/tanaka-takayoshi/rhte2016-apac-demo-dotnetcore -p  GIT_CONTEXT_DIR="OpenShift/04. Working with OpenShift Secrets" -p APPLICATION_NAME=<APP_NAME> -l app=<APP_NAME>
+ $  oc new-app --template=aspnet-s2i  -p GIT_URI=https://github.com/tanaka-takayoshi/rhte2016-apac-demo-dotnetcore -p  GIT_CONTEXT_DIR="OpenShift/04_Working_with_OpenShift_Secrets" -p APPLICATION_NAME=<APP_NAME> -l app=<APP_NAME>
  ```
 
 3. Edit deploymentconfig to add secret.

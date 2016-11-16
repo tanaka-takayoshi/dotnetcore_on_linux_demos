@@ -26,6 +26,6 @@ Id = table.Column<int>(nullable: false)
 
 ```
 $ oc new-app --template=postgresql-ephemeral -p DATABASE_SERVICE_NAME=postgresql,POSTGRESQL_USER=user,POSTGRESQL_PASSWORD=p@ssw0rd,POSTGRESQL_DATABASE=todo
-$ oc new-app --template=aspnet-s2i -p APPLICATION_NAME=simpletodo,GIT_URI=https://github.com/tanaka-takayoshi/dotnetcore_on_linux_demos.git,GIT_REF=development,GIT_CONTEXT_DIR="OpenShift/03. Working With DB" -l app=simpletodo
+$ oc new-app --template=aspnet-s2i -p APPLICATION_NAME=simpletodo,GIT_URI=https://github.com/tanaka-takayoshi/dotnetcore_on_linux_demos.git,GIT_CONTEXT_DIR="OpenShift/03_Working_with_DB" -l app=simpletodo
 $ oc env dc simpletodo ASPNETCORE_ENVIRONMENT=Production
 ```
