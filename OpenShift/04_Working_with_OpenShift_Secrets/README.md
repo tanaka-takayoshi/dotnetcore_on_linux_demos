@@ -10,7 +10,7 @@ OpenShift provides [secrets](https://docs.openshift.com/enterprise/3.2/dev_guide
  metadata:
    name: "mysecret"
  stringData: 
-   mysecretkey: "ValueOfMySecret"
+  mysecretconfig: '{"MySecret": "ValueOfMySecret"}'
 
  $ oc create -f mysecret.yaml
  ```
