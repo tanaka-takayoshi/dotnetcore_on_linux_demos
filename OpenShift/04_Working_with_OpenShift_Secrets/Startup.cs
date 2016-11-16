@@ -24,12 +24,12 @@ namespace RHTE2016Demo.Web
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
             if (Directory.Exists("/etc/secret-volume"))
-                builder.AddJsonFile("/etc/secret-volume/mysecret", true);
+                builder.AddJsonFile("/etc/secret-volume/mysecretconfig", true);
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
 
-            Console.WriteLine(Configuration["mysecretkey"]);
+            Console.WriteLine(Configuration["MySecret"]);
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -50,8 +50,8 @@ namespace RHTE2016Demo.Web
 
             app.Run(async (context) =>
             {
-                var secret = Configuration["SecretKey"];
-                await context.Response.WriteAsync($"Hello RHTE2016! The secret Configuration is: {secret}");
+                var secret = Configuration["MySecret"];
+                await context.Response.WriteAsync($"Hello! The secret Configuration value is: {secret}");
             });
         }
     }
